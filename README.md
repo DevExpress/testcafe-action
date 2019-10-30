@@ -46,7 +46,7 @@ The TestCafe version to install.
 
 The **latest version** is installed by default.
 
-## Example
+## Examples
 
 This section contains sample workflows that showcase `testcafe-action`.
 
