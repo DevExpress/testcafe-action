@@ -17,7 +17,7 @@ The [args](#args) option specifies command line arguments passed to the [testcaf
 
 You can also use the [version](#version) option to specify the TestCafe version to install.
 
-> Run the [setup-node](https://github.com/actions/setup-node) action before `testcafe-action` to install a specific a Node.js version.
+> Run the [setup-node](https://github.com/actions/setup-node) action before `testcafe-action` to install a specific Node.js version.
 
 ## Options
 
