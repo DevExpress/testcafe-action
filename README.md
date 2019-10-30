@@ -26,7 +26,6 @@ You can also use the [version](#version) option to specify the TestCafe version 
 TestCafe [command line arguments](https://devexpress.github.io/testcafe/documentation/using-testcafe/command-line-interface.html).
 
 ```yaml
-- uses: actions/checkout@v1
 - uses: actions/testcafe-action@v0.0.1
   with:
     args: "safari fixture.js -s takeOnFails=true -q -c 3"
