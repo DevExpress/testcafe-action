@@ -1,15 +1,15 @@
 name: 'TestCafe'
-description: 'TestCafe Install Action for GitHub Actions'
+description: 'Install TestCafe and Run Tests'
 inputs:
   version:
-    description: 'TestCafe version which will be installed from npm'
+    description: 'TestCafe version to install from npm'
     default: 'latest'
   branch:
-    description: 'Branch in the TestCafe GitHub Repository'
+    description: 'Branch in the TestCafe repository to check out. The action builds TestCafe from this branch'
   commit:
-    description: 'Specific commit in the TestCafe GitHub Repository'
-  testCafeArguments:
-    description: 'Test Cafe arguments'
+    description: 'Commit in the TestCafe repository to check out. The action builds TestCafe from this commit'
+  args:
+    description: 'Command line arguments passed to TestCafe'
     required: true
 runs:
   using: 'node12'
