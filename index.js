@@ -1,4 +1,3 @@
-const { resolve }  = require('path');
 const { execSync } = require('child_process');
 const { getInput } = require('@actions/core');
 
