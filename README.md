@@ -28,7 +28,7 @@ TestCafe [command line arguments](https://devexpress.github.io/testcafe/document
 ```yaml
 - uses: actions/testcafe-action@v0.0.1
   with:
-    args: "safari fixture.js -s takeOnFails=true -q -c 3"
+    args: "chrome fixture.js -s takeOnFails=true -q -c 3"
 ```
 
 ### version
@@ -67,10 +67,10 @@ jobs:
       - name: Install TestCafe from 'npm' and Run Tests
         uses: actions/testcafe-action@v0.0.1
         with:
-          args: "safari my-fixture.js"
+          args: "chrome my-fixture.js"
 ```
 
-The [checkout](https://github.com/actions/checkout) action checks out the repository. Then, `testcafe-action` installs TestCafe and runs `my-fixture.js` in Safari.
+The [checkout](https://github.com/actions/checkout) action checks out the repository. Then, `testcafe-action` installs TestCafe and runs `my-fixture.js` in Chrome.
 
 This workflow is triggered when you push changes to the repository. The job runs on a Windows virtual machine.
 
