@@ -13,7 +13,7 @@ function getInputStr (argValue) {
     return argValue;
 }
 
-const testCafeArguments = getInput('testCafeArguments');
+const testCafeArguments = getInput('args');
 
 const version   = getInput('version');
 const branch    = getInput('branch');

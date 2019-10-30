@@ -8,7 +8,7 @@ inputs:
     description: 'Branch in the TestCafe repository to check out. The action builds TestCafe from this branch'
   commit:
     description: 'Commit in the TestCafe repository to check out. The action builds TestCafe from this commit'
-  testCafeArguments:
+  args:
     description: 'Command line arguments passed to TestCafe'
     required: true
 runs:
