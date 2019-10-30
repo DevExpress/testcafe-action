@@ -30,18 +30,18 @@ log(`BRANCH: ${getInputStr(branch)}`);
 log(`COMMIT: ${getInputStr(commit)}`);
 
 if (branch || commit) {
-    log('Clonning testcafe git repository...');
+    log('Cloning the TestCafe repository...');
     log(gitCloneCmd);
     execSync(gitCloneCmd, { stdio: 'inherit' });
 
-    log('Checking out repository...');
+    log('Checking out the repository...');
     log(gitCheckoutCmd);
     execSync(gitCheckoutCmd, { stdio: 'inherit' });
 
     log('Installing npm packages...');
     execSync(`cd testcafe && npm install `, { stdio: 'inherit' });
 
-    log('Building testcafe...');
+    log('Building TestCafe...');
     execSync(`cd testcafe && npx gulp fast-build`, { stdio: 'inherit' });
 
     testCafeCmd = 'node testcafe/bin/testcafe';
@@ -54,5 +54,5 @@ else {
     testCafeCmd = 'npx testcafe';
 }
 
-log('Running testcafe...');
+log('Running TestCafe...');
 execSync(`${testCafeCmd} ${testCafeArguments}`, { stdio: 'inherit' });
