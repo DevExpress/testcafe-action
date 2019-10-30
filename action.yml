@@ -1,4 +1,4 @@
-name: 'TestCafe'
+name: 'testcafe'
 description: 'Install TestCafe and Run Tests'
 inputs:
   version:
