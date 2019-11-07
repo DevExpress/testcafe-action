@@ -1,3 +1,4 @@
+const os           = require('os');
 const { execSync } = require('child_process');
 const { getInput } = require('@actions/core');
 
@@ -53,5 +54,10 @@ else {
     testCafeCmd = 'npx testcafe';
 }
 
+let xvfbCmd = '';
+
+if (os.type() === 'Linux')
+    xvfbCmd = `xvfb-run --server-args="-screen 0 1280x720x24" `;
+
 log('Running TestCafe...');
-execSync(`${testCafeCmd} ${testCafeArguments}`, { stdio: 'inherit' });
+execSync(`${xvfbCmd}${testCafeCmd} ${testCafeArguments}`, { stdio: 'inherit' });
