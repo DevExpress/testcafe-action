@@ -56,11 +56,8 @@ else {
 
 let xvfbCmd = '';
 
-if (os.type() === 'Linux') {
-    xvfbCmd = `Xvfb :1 -screen 0 1280x720x24 >/dev/null 2>&1 &
-        export DISPLAY=:1.0
-        fluxbox >/dev/null 2>&1 & `;
-}
+if (os.type() === 'Linux')
+    xvfbCmd = `xvfb-run --server-args="-screen 0 1280x720x24" `;
 
 log('Running TestCafe...');
 execSync(`${xvfbCmd}${testCafeCmd} ${testCafeArguments}`, { stdio: 'inherit' });
