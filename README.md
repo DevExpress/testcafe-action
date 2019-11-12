@@ -1,4 +1,4 @@
-# TestCafe Action
+# Run TestCafe GitHub Action
 
 This action installs [TestCafe](https://github.com/DevExpress/testcafe) from `npm` and runs tests.
 
@@ -6,7 +6,7 @@ This action installs [TestCafe](https://github.com/DevExpress/testcafe) from `np
 
 ```yaml
 - uses: actions/checkout@v1
-- uses: actions/testcafe-action@v0.0.1
+- uses: DevExpress/testcafe-action@latest
   with:
     args: "chrome tests"
 ```
@@ -26,7 +26,7 @@ You can also use the [version](#version) option to specify the TestCafe version 
 TestCafe [command line arguments](https://devexpress.github.io/testcafe/documentation/using-testcafe/command-line-interface.html).
 
 ```yaml
-- uses: actions/testcafe-action@v0.0.1
+- uses: DevExpress/testcafe-action@latest
   with:
     args: "chrome fixture.js -s takeOnFails=true -q -c 3"
 ```
@@ -38,7 +38,7 @@ TestCafe [command line arguments](https://devexpress.github.io/testcafe/document
 The TestCafe version to install.
 
 ```yaml
-- uses: actions/testcafe-action@v0.0.1
+- uses: DevExpress/testcafe-action@latest
   with:
     version: "1.6.0"
     args: "chrome tests"
@@ -48,7 +48,7 @@ The **latest version** is installed by default.
 
 ## Examples
 
-This section contains sample workflows that showcase `testcafe-action`.
+This section contains sample workflows that show how to use `testcafe-action`.
 
 ### Run TestCafe Tests
 
@@ -65,7 +65,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install TestCafe from 'npm' and Run Tests
-        uses: actions/testcafe-action@v0.0.1
+        uses: DevExpress/testcafe-action@latest
         with:
           args: "chrome my-fixture.js"
 ```
@@ -74,9 +74,9 @@ The [checkout](https://github.com/actions/checkout) action checks out the reposi
 
 This workflow is triggered when you push changes to the repository. The job runs on a Windows virtual machine.
 
-### Use Multiple Node.js Versions
+### Target Multiple Node.js Versions and Operating Systems
 
-The following workflow demonstrates how to run TestCafe tests with several Node.js versions.
+The following workflow demonstrates how to run TestCafe tests across Node.js versions and operating systems.
 
 ```yaml
 name: Use Matrix Strategy to Test in Several Node.js Versions
@@ -85,9 +85,10 @@ on: [push]
 jobs:
   build:
     name: Run Tests With Several Node.js Versions
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os: [ubuntu-latest, windows-latest]
         node: [8, 10, 12]
     steps:
       - uses: actions/setup-node@v1
@@ -95,11 +96,11 @@ jobs:
           node-version: ${{ matrix.node }}
       - uses: actions/checkout@v1
       - name: Run TestCafe Tests
-        uses: actions/testcafe-action@master
+        uses: DevExpress/testcafe-action@latest
         with:
           args: "chrome tests"
 ```
 
-This job contains a matrix strategy that duplicates it to run three Node.js versions: `8`, `10`, and `12`.
+This job contains a matrix strategy that duplicates it to run on Windows and Ubuntu virtual machines in three Node.js versions (`8`, `10`, and `12`).
 
 The [setup-node](https://github.com/actions/setup-node) action installs the Node.js version defined in the matrix. Then, [checkout](https://github.com/actions/checkout) fetches the code and `testcafe-action` runs tests.
