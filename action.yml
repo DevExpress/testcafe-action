@@ -1,7 +1,7 @@
 name: 'Run TestCafe'
+description: 'Install TestCafe and Run Tests'
 icon: 'check-square'
 color: 'green'
-description: 'Install TestCafe and Run Tests'
 inputs:
   version:
     description: 'TestCafe version to install from npm'
