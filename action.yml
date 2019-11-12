@@ -1,4 +1,6 @@
 name: 'Run TestCafe'
+icon: 'check-square'
+color: 'green'
 description: 'Install TestCafe and Run Tests'
 inputs:
   version:
