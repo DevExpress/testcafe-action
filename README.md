@@ -19,8 +19,6 @@ You can also use the [version](#version) option to specify the TestCafe version 
 
 > Run the [setup-node](https://github.com/actions/setup-node) action before `testcafe-action` to install a specific Node.js version.
 
-`testcafe-action` runs on Linux and Windows.
-
 ## Options
 
 ### args
