@@ -79,12 +79,12 @@ This workflow is triggered when you push changes to the repository. The job runs
 The following workflow demonstrates how to run TestCafe tests across Node.js versions and operating systems.
 
 ```yaml
-name: Use Matrix Strategy to Test in Several Node.js Versions
+name: Target Multiple Node.js Versions and Operating Systems
 on: [push]
 
 jobs:
   build:
-    name: Run Tests With Several Node.js Versions
+    name: Run Tests Across Node.js Versions and Operating Systems
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
