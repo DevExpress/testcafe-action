@@ -15,7 +15,7 @@ In this example, the [checkout](https://github.com/actions/checkout) action fetc
 
 The [args](#args) option specifies command line arguments passed to the [testcafe](https://devexpress.github.io/testcafe/documentation/using-testcafe/command-line-interface.html) command.
 
-You can also use the [version](#version) option to specify the TestCafe version to install.
+You can also use the [version](#version) option to specify the TestCafe version.
 
 > Run the [setup-node](https://github.com/actions/setup-node) action before `testcafe-action` to install a specific Node.js version.
 
