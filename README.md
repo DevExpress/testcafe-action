@@ -11,7 +11,7 @@ This action installs [TestCafe](https://github.com/DevExpress/testcafe) from `np
     args: "chrome tests"
 ```
 
-In this example, the [checkout](https://github.com/actions/checkout) action checks out the repository. Then `testcafe-action` installs the latest TestCafe version and runs tests from the `tests` folder in Google Chrome.
+In this example, the [checkout](https://github.com/actions/checkout) action fetches the repository. Then `testcafe-action` installs the latest TestCafe version and runs tests from the `tests` folder in Google Chrome.
 
 The [args](#args) option specifies command line arguments passed to the [testcafe](https://devexpress.github.io/testcafe/documentation/using-testcafe/command-line-interface.html) command.
 
@@ -44,7 +44,7 @@ The TestCafe version to install.
     args: "chrome tests"
 ```
 
-**Default value:** `latest` (the latest version)
+**Default value:** `latest`
 
 ## Examples
 
@@ -52,7 +52,7 @@ This section contains sample workflows that show how to use `testcafe-action`.
 
 ### Run TestCafe Tests
 
-The following workflow demonstrates the basic `testcafe-action` use case.
+The following workflow demonstrates how to use `testcafe-action` in a basic scenario.
 
 ```yaml
 name: Basic TestCafe Workflow
@@ -70,7 +70,7 @@ jobs:
           args: "chrome my-fixture.js"
 ```
 
-The [checkout](https://github.com/actions/checkout) action checks out the repository. Then `testcafe-action` installs TestCafe and runs `my-fixture.js` in Chrome.
+The [checkout](https://github.com/actions/checkout) action fetches the repository. Then `testcafe-action` installs TestCafe and runs `my-fixture.js` in Chrome.
 
 This workflow is triggered when you push changes to the repository. The job runs on a Windows virtual machine.
 
