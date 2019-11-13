@@ -52,7 +52,7 @@ This section contains sample workflows that show how to use `testcafe-action`.
 
 ### Run TestCafe Tests
 
-The following workflow demonstrates how to use `testcafe-action` in a basic scenario.
+The following workflow demonstrates how to use `testcafe-action` in a basic scenario:
 
 ```yaml
 name: Basic TestCafe Workflow
