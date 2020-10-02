@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/AlexKamaev/testcafe-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.0"
+    "@actions/core": "^1.2.6"
   }
 }
