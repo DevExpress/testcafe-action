@@ -44,15 +44,6 @@ The TestCafe version to install.
     args: "chrome tests"
 ```
 
-If you are managing TestCafe already in your package.json dependencies and want to use that version, you can specify ``null`` as the version for this action and it will use the existing installation.
-
-```yaml
-- uses: DevExpress/testcafe-action@latest
-  with:
-    version: null
-    args: "chrome tests"
-```
-
 **Default value:** `latest`
 
 ### skip-install
