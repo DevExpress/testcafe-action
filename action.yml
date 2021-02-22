@@ -11,6 +11,9 @@ inputs:
     description: 'Branch in the TestCafe repository to check out. The action builds TestCafe from this branch'
   commit:
     description: 'Commit in the TestCafe repository to check out. The action builds TestCafe from this commit'
+  skip-install:
+    description: 'Skip installation of TestCafe and use a previously installed version.'
+    default: false
   args:
     description: 'Command line arguments passed to TestCafe'
     required: true
