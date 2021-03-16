@@ -46,6 +46,21 @@ The TestCafe version to install.
 
 **Default value:** `latest`
 
+### skip-install
+
+*Optional*
+
+Whether to skip having this action install TestCafe. This is useful if you are managing TestCafe already in your package.json dependencies and want to use that version.
+
+```yaml
+- uses: DevExpress/testcafe-action@latest
+  with:
+    skip-install: true
+    args: "chrome tests"
+```
+
+**Default value:** `false`
+
 ## Examples
 
 This section contains sample workflows that show how to use `testcafe-action`.
