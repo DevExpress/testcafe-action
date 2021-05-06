@@ -18,7 +18,7 @@ const testCafeArguments = getInput('args');
 const version   = getInput('version');
 const branch    = getInput('branch');
 const commit    = getInput('commit');
-const skipInstall = getInput('skip-install') === true
+const skipInstall = getInput('skip-install') === 'true'
 const branchCmd = branch && !commit ? `-b ${branch}` : '';
 
 const gitCloneCmd    = `git clone https://github.com/DevExpress/testcafe.git ${branchCmd}`;
