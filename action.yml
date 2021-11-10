@@ -14,6 +14,9 @@ inputs:
   skip-install:
     description: 'Skip installation of TestCafe and use a previously installed version.'
     default: false
+  working-directory:
+    description: 'The working directory in which to execute all commands.'
+    default: undefined
   args:
     description: 'Command line arguments passed to TestCafe'
     required: true
