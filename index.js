@@ -32,26 +32,34 @@ log(`BRANCH: ${getInputStr(branch)}`);
 log(`COMMIT: ${getInputStr(commit)}`);
 log(`SKIP INSTALL: ${skipInstall}`);
 
+const execOptions = {
+    stdio: 'inherit'
+};
+
+if(!!cwd) {
+    execOptions.cwd = cwd;
+}
+
 if (branch || commit) {
     log('Cloning the TestCafe repository...');
     log(gitCloneCmd);
-    execSync(gitCloneCmd, { stdio: 'inherit', cwd });
+    execSync(gitCloneCmd, execOptions);
 
     log('Checking out the repository...');
     log(gitCheckoutCmd);
-    execSync(gitCheckoutCmd, { stdio: 'inherit', cwd });
+    execSync(gitCheckoutCmd, execOptions);
 
     log('Installing npm packages...');
-    execSync(`cd testcafe && npm install `, { stdio: 'inherit', cwd });
+    execSync(`cd testcafe && npm install `, execOptions);
 
     log('Building TestCafe...');
-    execSync(`cd testcafe && npx gulp fast-build`, { stdio: 'inherit', cwd });
+    execSync(`cd testcafe && npx gulp fast-build`, execOptions);
     testCafeCmd = 'node testcafe/bin/testcafe';
 }
 else {
     if (!skipInstall) {
         log('Installing TestCafe from npm...');
-        execSync(`npm i testcafe@${version}`, { cwd });
+        execSync(`npm i testcafe@${version}`, execOptions);
     }
     testCafeCmd = 'npx testcafe';
 }
@@ -62,4 +70,4 @@ if (os.type() === 'Linux')
     xvfbCmd = `xvfb-run --server-args="-screen 0 1280x720x24" `;
 
 log('Running TestCafe...');
-execSync(`${xvfbCmd}${testCafeCmd} ${testCafeArguments}`, { stdio: 'inherit', cwd });
+execSync(`${xvfbCmd}${testCafeCmd} ${testCafeArguments}`, execOptions);
