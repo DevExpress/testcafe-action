@@ -1,8 +1,11 @@
-# Run TestCafe GitHub Action
+# DEPREDCATED
+The TestCafe team no longer maintains the `testcafe-action` repository. If you want to take over the project, we'll be happy to hand it over. To contact the team, create a new GitHub issue or email support@devexpress.com.
+
+## Run TestCafe GitHub Action
 
 This action installs [TestCafe](https://github.com/DevExpress/testcafe) from `npm` and runs tests.
 
-## Usage
+### Usage
 
 ```yaml
 - uses: actions/checkout@v1
@@ -19,9 +22,9 @@ You can also use the [version](#version) option to specify the TestCafe version.
 
 > Run the [setup-node](https://github.com/actions/setup-node) action before `testcafe-action` to install a specific Node.js version.
 
-## Options
+### Options
 
-### args
+#### args
 
 TestCafe [command line arguments](https://devexpress.github.io/testcafe/documentation/using-testcafe/command-line-interface.html).
 
@@ -31,7 +34,7 @@ TestCafe [command line arguments](https://devexpress.github.io/testcafe/document
     args: "chrome fixture.js -s takeOnFails=true -q -c 3"
 ```
 
-### version
+#### version
 
 *Optional*
 
@@ -46,7 +49,7 @@ The TestCafe version to install.
 
 **Default value:** `latest`
 
-### skip-install
+#### skip-install
 
 *Optional*
 
@@ -61,11 +64,11 @@ Whether to skip having this action install TestCafe. This is useful if you are m
 
 **Default value:** `false`
 
-## Examples
+### Examples
 
 This section contains sample workflows that show how to use `testcafe-action`.
 
-### Run TestCafe Tests
+#### Run TestCafe Tests
 
 The following workflow demonstrates how to use `testcafe-action` in a basic scenario:
 
@@ -89,7 +92,7 @@ The [checkout](https://github.com/actions/checkout) action fetches the repositor
 
 This workflow is triggered when you push changes to the repository. The job runs on a Windows virtual machine.
 
-### Target Multiple Node.js Versions and Operating Systems
+#### Target Multiple Node.js Versions and Operating Systems
 
 The following workflow demonstrates how to run TestCafe tests across Node.js versions and operating systems.
 
