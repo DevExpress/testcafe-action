@@ -11,4 +11,4 @@ jobs:
     - name: testcafe action workflow
       uses: ./
       with:
-        args: "chrome"
+        args: "chrome" 
